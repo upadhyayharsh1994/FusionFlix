@@ -24,7 +24,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-        private Button b;
     public static final String TAG = MainActivity.class.getSimpleName();
     private MovieAdapter adapter;
     private List<Result> movies;
@@ -62,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView(){
-        recyclerView = (RecyclerView)findViewById(R.id.recycler);
+        recyclerView = findViewById(R.id.recycler);
         adapter = new MovieAdapter(this, movies);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
