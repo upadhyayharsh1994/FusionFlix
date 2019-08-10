@@ -24,7 +24,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-
+        private Button b;
     public static final String TAG = MainActivity.class.getSimpleName();
     private MovieAdapter adapter;
     private List<Result> movies;
