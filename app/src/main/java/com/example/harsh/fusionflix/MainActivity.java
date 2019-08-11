@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private MovieAdapter adapter;
     private List<Result> movies;
     private RecyclerView recyclerView;
+    LinearLayout ll_footer;
     Button textTop, textPopular;
 
     @Override
@@ -37,7 +40,27 @@ public class MainActivity extends AppCompatActivity {
 
         textTop = findViewById(R.id.text_pop);
         textPopular = findViewById(R.id.text_popular);
+        recyclerView = findViewById(R.id.recycler);
+        ll_footer = findViewById(R.id.ll_footer);
 
+        recyclerView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    ll_footer.setVisibility(View.VISIBLE);
+                }
+                else if (motionEvent.getAction()==MotionEvent.ACTION_DOWN){
+                    ll_footer.setVisibility(View.VISIBLE);
+                }
+                else {
+                    ll_footer.setVisibility(View.GONE);
+                    ll_footer.animate();
+
+                }
+
+                return false;
+            }
+        });
         getPopularMovies();
     }
 

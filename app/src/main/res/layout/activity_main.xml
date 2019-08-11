@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/darker_gray"
+        android:background="@android:color/black"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,7 +23,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_smileys"
+            android:id="@+id/ll_footer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -36,7 +36,10 @@
                <Button
                    android:id="@+id/text_popular"
                    android:text="Most popular"
+                   android:onClick="onPopularMovies"
+                   android:background="@color/colorPrimary"
                    android:layout_width="match_parent"
+                   android:textColor="@color/white"
                    android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
@@ -45,8 +48,11 @@
                 android:layout_height="wrap_content"
                 android:gravity="center">
                 <Button
+                    android:background="@color/colorPrimary"
                     android:text="Top-rated"
+                    android:onClick="onTopMovies"
                     android:id="@+id/text_pop"
+                    android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
